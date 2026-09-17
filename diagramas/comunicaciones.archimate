@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Comunicaciones Corp SAS - Unidad 2" id="id-comunicaciones-corp-sas-u2" version="5.0.0">
+  <folder name="Strategy" id="id-c73c58d319a645cba1bacc331eedacc8" type="strategy"/>
+  <folder name="Business" id="id-edd80c1c34a74f8186d33bdd1de46f3f" type="business">
+    <element xsi:type="archimate:BusinessRole" name="Celula de Soporte Tecnico Especializada" id="id-role-soporte"/>
+    <element xsi:type="archimate:BusinessRole" name="Ingeniero de Software Senior" id="id-role-ingeniero"/>
+    <element xsi:type="archimate:BusinessProcess" name="Radicacion y Gestion de Licitaciones Publicas" id="id-process-licitacion"/>
+    <element xsi:type="archimate:BusinessProcess" name="Ciclo de Desarrollo de Codigo Estandarizado" id="id-process-desarrollo"/>
+    <element xsi:type="archimate:BusinessEvent" name="Reporte Automatico de Incidente de Cliente" id="id-event-incidente"/>
+  </folder>
+  <folder name="Application" id="id-a4f064b3189545ffa09c2e5505b2034f" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="Sistema de Gestion Empresarial ERP CRM Integrado" id="id-app-erp-crm"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Plataforma de Mesa de Ayuda Digital" id="id-app-mesa-ayuda"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Costura de Integracion Asincrona (Event Streaming Broker)" id="id-interface-costura"/>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-db2acd4356674832b9ad265a13941d31" type="technology">
+    <element xsi:type="archimate:Node" name="Contenedores de Virtualizacion Ligera" id="id-node-cloud"/>
+    <element xsi:type="archimate:Artifact" name="Base de Datos de Telefonía IP con Respaldos Automatizados" id="id-artifact-db"/>
+  </folder>
+  <folder name="Motivation" id="id-23bf2d438498467bbbad527efd9bd468" type="motivation">
+    <element xsi:type="archimate:Driver" name="Presion Competitiva y Exigencias Estatales" id="id-driver-1"/>
+    <element xsi:type="archimate:Goal" name="Lograr Crecimiento Escalable en Software" id="id-goal-1"/>
+    <element xsi:type="archimate:Goal" name="Maximizar Efectividad en Licitaciones Publicas" id="id-goal-2"/>
+    <element xsi:type="archimate:Principle" name="Gobernanza Descentralizada Basada en Tracking Digital" id="id-principle-2"/>
+    <element xsi:type="archimate:Outcome" name="Autonomia Operativa en Lineas de Negocio" id="id-outcome-1"/>
+  </folder>
+  <folder name="Implementation &amp; Migration" id="id-7bf2f0a719ad43f9b3b8c0d2672d4fa4" type="implementation_migration">
+    <element xsi:type="archimate:Gap" name="Brecha B-02: Ambiguedad de Roles y Cuello de Botella Gerencial" id="id-gap-b02"/>
+    <element xsi:type="archimate:WorkPackage" name="Proyecto de Adopcion de Frameworks y Control de Versiones" id="id-wp-frameworks"/>
+    <element xsi:type="archimate:WorkPackage" name="Despliegue de Mesa de Ayuda e Implementacion de Workflows" id="id-wp-ticketing"/>
+    <element xsi:type="archimate:Plateau" name="Estado de Transicion 1: Procesos Ordenados" id="id-plateau-transicion"/>
+    <element xsi:type="archimate:Deliverable" name="Manual Corporativo de Arquitectura y Roles Estandarizados" id="id-deliverable-manual"/>
+  </folder>
+  <folder name="Other" id="id-2372adc26aa844e88231119b282bbb4a" type="other"/>
+  <folder name="Relations" id="id-dec234c22530440fb1b5a95ffe39a8ab" type="relations">
+    <element xsi:type="archimate:InfluenceRelationship" id="id-rel-1" source="id-driver-1" target="id-goal-1"/>
+    <element xsi:type="archimate:InfluenceRelationship" id="id-rel-2" source="id-driver-1" target="id-goal-2"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-3" source="id-principle-2" target="id-goal-1"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-4" source="id-goal-1" target="id-outcome-1"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-5" source="id-goal-2" target="id-outcome-1"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-rel-6" source="id-role-soporte" target="id-event-incidente"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-rel-7" source="id-role-ingeniero" target="id-process-desarrollo"/>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-rel-8" source="id-event-incidente" target="id-process-licitacion"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-rel-9" source="id-process-licitacion" target="id-process-desarrollo"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-rel-10" source="id-interface-costura" target="id-app-erp-crm"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-rel-11" source="id-app-mesa-ayuda" target="id-interface-costura"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-12" source="id-node-cloud" target="id-interface-costura"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-rel-13" source="id-node-cloud" target="id-artifact-db"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-14" source="id-wp-ticketing" target="id-gap-b02"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-15" source="id-wp-frameworks" target="id-plateau-transicion"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-rel-16" source="id-wp-ticketing" target="id-deliverable-manual"/>
+  </folder>
+  <folder name="Views" id="id-58500479414a42cfb936c89426bf36b7" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Vista 1 - Motivacion y Estrategia" id="id-view-1">
+      <child xsi:type="archimate:DiagramObject" id="id-geo-d1" archimateElement="id-driver-1">
+        <bounds x="20" y="20" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-1" source="id-geo-d1" target="id-geo-g1" archimateRelationship="id-rel-1"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-2" source="id-geo-d1" target="id-geo-g2" archimateRelationship="id-rel-2"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-g1" targetConnections="id-conn-1 id-conn-3" archimateElement="id-goal-1">
+        <bounds x="276" y="20" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-4" source="id-geo-g1" target="id-geo-o1" archimateRelationship="id-rel-4"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-g2" targetConnections="id-conn-2" archimateElement="id-goal-2">
+        <bounds x="276" y="110" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-5" source="id-geo-g2" target="id-geo-o1" archimateRelationship="id-rel-5"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-p2" archimateElement="id-principle-2">
+        <bounds x="20" y="110" width="173" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-3" source="id-geo-p2" target="id-geo-g1" archimateRelationship="id-rel-3"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-o1" targetConnections="id-conn-4 id-conn-5" archimateElement="id-outcome-1">
+        <bounds x="476" y="65" width="160" height="60"/>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Vista 2 - Capa de Negocio" id="id-view-2">
+      <child xsi:type="archimate:DiagramObject" id="id-geo-rs" archimateElement="id-role-soporte">
+        <bounds x="20" y="84" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-6" source="id-geo-rs" target="id-geo-ei" archimateRelationship="id-rel-6"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-ri" archimateElement="id-role-ingeniero">
+        <bounds x="20" y="156" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-7" source="id-geo-ri" target="id-geo-pd" archimateRelationship="id-rel-7"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-pl" targetConnections="id-conn-8" archimateElement="id-process-licitacion">
+        <bounds x="220" y="20" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-9" source="id-geo-pl" target="id-geo-pd" archimateRelationship="id-rel-9"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-pd" targetConnections="id-conn-7 id-conn-9" archimateElement="id-process-desarrollo">
+        <bounds x="220" y="156" width="160" height="60"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-ei" targetConnections="id-conn-6" archimateElement="id-event-incidente">
+        <bounds x="420" y="97" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-8" source="id-geo-ei" target="id-geo-pl" archimateRelationship="id-rel-8">
+          <bendpoint startX="-8" startY="-55" endX="192" endY="22"/>
+        </sourceConnection>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Vista 3 - Aplicacion y Tecnologia" id="id-view-3">
+      <child xsi:type="archimate:DiagramObject" id="id-geo-erp" targetConnections="id-conn-10" archimateElement="id-app-erp-crm">
+        <bounds x="20" y="20" width="160" height="60"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-ma" archimateElement="id-app-mesa-ayuda">
+        <bounds x="220" y="20" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-11" source="id-geo-ma" target="id-geo-ic" archimateRelationship="id-rel-11"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-ic" targetConnections="id-conn-11 id-conn-12" archimateElement="id-interface-costura">
+        <bounds x="120" y="120" width="180" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-10" source="id-geo-ic" target="id-geo-erp" archimateRelationship="id-rel-10"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-nc" archimateElement="id-node-cloud">
+        <bounds x="120" y="220" width="180" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-12" source="id-geo-nc" target="id-geo-ic" archimateRelationship="id-rel-12"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-13" source="id-geo-nc" target="id-geo-ad" archimateRelationship="id-rel-13"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-ad" targetConnections="id-conn-13" archimateElement="id-artifact-db">
+        <bounds x="340" y="220" width="189" height="60"/>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Vista 4 - Implementacion y Migracion" id="id-view-4">
+      <child xsi:type="archimate:DiagramObject" id="id-geo-gb" targetConnections="id-conn-14" archimateElement="id-gap-b02">
+        <bounds x="20" y="20" width="185" height="60"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-wf" archimateElement="id-wp-frameworks">
+        <bounds x="220" y="20" width="160" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-15" source="id-geo-wf" target="id-geo-pt" archimateRelationship="id-rel-15"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-wt" archimateElement="id-wp-ticketing">
+        <bounds x="204" y="120" width="176" height="60"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-14" source="id-geo-wt" target="id-geo-gb" archimateRelationship="id-rel-14"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-conn-16" source="id-geo-wt" target="id-geo-dm" archimateRelationship="id-rel-16"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-pt" targetConnections="id-conn-15" archimateElement="id-plateau-transicion">
+        <bounds x="420" y="20" width="160" height="60"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-geo-dm" targetConnections="id-conn-16" archimateElement="id-deliverable-manual">
+        <bounds x="420" y="120" width="160" height="60"/>
+      </child>
+    </element>
+  </folder>
+</archimate:model>
